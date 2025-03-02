@@ -1,0 +1,30 @@
+/* You can add global styles here if needed */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #f8f9fa;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #2d386798;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f8f9fa;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #2d386798;
+}
+
+/* Hide arrows in number input for Webkit browsers (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
