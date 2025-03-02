@@ -117,7 +117,7 @@ function Drill() {
   const savePerformance = async (timeTaken) => {
     try {
       await axios.post(
-        "http://localhost:5000/api/save-performance",
+        `${import.meta.env.VITE_API_URL}/save-performance`,
         {
           date: new Date().toISOString(),
           operationCategory,
@@ -170,7 +170,9 @@ function Drill() {
       <div className="stats mt-4">
         <p className="fs-5">
           ⏳ Time:{" "}
-          <span className="text fw-bold">{(elapsedTime / 1000).toFixed(2)}s</span>
+          <span className="text fw-bold">
+            {(elapsedTime / 1000).toFixed(2)}s
+          </span>
         </p>
       </div>
     </animated.div>

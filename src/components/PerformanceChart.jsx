@@ -21,7 +21,7 @@ const PerformanceChart = () => {
   useEffect(() => {
     const fetchPerformanceData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/performance-data?limit=1000");
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/performance-data?limit=1000`);
         if (!response.ok) throw new Error("Network response was not ok");
         const result = await response.json();
 
