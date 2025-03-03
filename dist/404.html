@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Single Page App Redirect</title>
+    <script>
+      const path = window.location.pathname;
+      sessionStorage.setItem('redirectPath', path);
+      window.location = '/math-drill-frontend/';
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
