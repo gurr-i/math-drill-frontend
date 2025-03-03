@@ -1,13 +1,16 @@
 import os
 
 # Define ignored folders and files for structure generation
-IGNORED_FOLDERS_IN_STRUCTURE = {"node_modules", "__pycache__", ".git", "migrations", "venv", ".vscode"}
+IGNORED_FOLDERS_IN_STRUCTURE = {"node_modules", "__pycache__", ".git", "migrations", "venv", ".vscode","dist","docs"}
 IGNORED_FILES_IN_STRUCTURE = {".DS_Store", "package-lock.json", "performance.json"}
 
 # Define ignored folders and files for content extraction
-IGNORED_FOLDERS_IN_CONTENT = {"node_modules", "__pycache__", ".git", "migrations", "venv", ".vscode"}
+IGNORED_FOLDERS_IN_CONTENT = {"node_modules", "__pycache__", ".git", "migrations", "venv", ".vscode","dist","docs"}
 IGNORED_FILES_IN_CONTENT = {".env", ".gitignore", ".DS_Store", "package-lock.json", "performance.json",
-                            "ProjectStructure_generator.py", "performance.db", "performance_data.json", "README.md"}
+                            "ProjectStructure_generator.py", "performance.db", "performance_data.json", "README.md","gitcommands.txt","vite.svg","$.svg"}
+
+# File extensions to ignore
+IGNORED_FILES_IN_CONTENT_EXTENSIONS = {".svg", ".log", ".tmp",".txt"}  # Add any other extensions you want to ignore
 
 # Get the project root directory and project name
 project_root = os.getcwd()
@@ -46,7 +49,7 @@ def extract_file_content(file_path):
     """
     file_name = os.path.basename(file_path)
     
-    if file_name in IGNORED_FILES_IN_CONTENT:
+    if file_name in IGNORED_FILES_IN_CONTENT or any(file_name.endswith(ext) for ext in IGNORED_FILES_IN_CONTENT_EXTENSIONS):
         return "[Skipped: Ignored file]\n"
     
     try:
