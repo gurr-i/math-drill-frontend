@@ -19,7 +19,7 @@ const Dashboard = () => {
 
       {loading ? (
         <div className="flex justify-center items-center mt-10">
-          <p className="text-lg text-white-500">Loading dashboard...</p>
+          <p className="text-lg text-white-500 placeholder ">Loading dashboard...</p>
         </div>
       ) : (
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">

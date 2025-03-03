@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import "./App.css";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -11,7 +11,7 @@ const OperationSelection = lazy(() => import("./pages/OperationSelection"));
 const App = () => {
   return (
     <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
-      <Header />
+      <Navbar />
       <div className="">
         <Suspense fallback={<p className="text-center">Loading...</p>}>
           <Routes>
