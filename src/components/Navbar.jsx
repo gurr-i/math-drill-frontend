@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
+import logoimage from "../assets/vite.svg";
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg" >
       <div className="container-fluid">
         <Link className="navbar-brand text-white" to="/">
-          🔢 Drill.ai
+          <img src={logoimage} className="App-logo" alt="logo" /> Drill.ai
         </Link>
 
         <button

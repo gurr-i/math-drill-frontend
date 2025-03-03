@@ -17,11 +17,14 @@ const PerformanceChart = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isMounted, setIsMounted] = useState(false);
+  const API_URL = import.meta.env.VITE_API_URL;
+
 
   useEffect(() => {
     const fetchPerformanceData = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/performance-data?limit=1000`);
+        
+        const response = await fetch(`${API_URL}/performance-data?limit=1000`);
         if (!response.ok) throw new Error("Network response was not ok");
         const result = await response.json();
 
@@ -68,7 +71,7 @@ const PerformanceChart = () => {
         setEntryData(entriesByOp);
         setDailyData(formattedDailyData);
       } catch (err) {
-        console.error("Error fetching performance data:", err);
+        console.error("Error fetching performance data: Connect your Backend to API_URL: ", API_URL,err);
         setError("Failed to load chart data. Please try again later.");
       } finally {
         setLoading(false);
